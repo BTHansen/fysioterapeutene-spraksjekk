@@ -1,12 +1,26 @@
 /* ============================================================
-   NFF-REGLER — rediger fritt. Dette er forbundets egne regler.
-   Bygger på merkevareplattformen. Hver kategori har en ordliste du kan endre.
+   NFF-REGLER — forbundets egne regler. Rediger fritt.
+
+   SLIK LEGGER DU TIL EN HEL NY KATEGORI (kun i denne fila):
+   Lim inn en ny blokk med en egen nøkkel, og sett:
+     type   : "ordbok" = ord med forslag  |  "liste" = ord som flagges  |  "regex" = mønster
+     color  : "#RRGGBB" = fargen kategorien får i verktøyet
+     label  : overskriften som vises
+     why    : forklaringen
+     prio   : tall (høyere vinner ved overlapp; 5 = høyest)
+     ord    : { "ord":"forslag", ... }  for ordbok
+              [ "ord", "ord", ... ]      for liste
+     fixPrefix : (kun ordbok) tekst foran forslaget, f.eks. "Skriv heller: "
+     fix    : (kun liste) fast råd som vises
+   Du trenger IKKE endre spraksjekk.js eller index.html for en ny kategori.
    ============================================================ */
 const REGLER = {
   // HARDE REGLER (rød). Disse er absolutte i NFFs språk.
   hard: {
+    type: "regex",
     label: "Aldri",
-    sclass: "hard",
+    color: "#c8102e",
+    prio: 5,
     poster: [
       // NFF -> skriv ut fullt navn
       { re: /(?<![\wæøåÆØÅ])NFFs?(?![\wæøåÆØÅ])/g,
@@ -21,9 +35,12 @@ const REGLER = {
 
   // MODERNE TUNGE ORD (gul). Ord som ikke står i Kansellisten, men gjør teksten unødig tung.
   byra: {
+    type: "ordbok",
     label: "Tungt ord – vurder velge et enklere",
-    sclass: "byra",
+    color: "#c97a00",
+    prio: 3,
     why: "Kan gjøre teksten unødig byråkratisk. Merkevaren er mindre byråkratisk og mer menneskelig.",
+    fixPrefix: "Prøv: ",
     ord: {
       "i henhold til":"etter / ifølge", "i forbindelse med":"ved / for",
       "med henblikk på":"for å", "herved":"(kan ofte sløyfes)",
@@ -42,8 +59,10 @@ const REGLER = {
 
   // PASSIV (lilla). «Løsningsorientert, men ikke passiv».
   passiv: {
+    type: "liste",
     label: "Passiv – skriv hvem som gjør det",
-    sclass: "passiv",
+    color: "#6a4ca0",
+    prio: 2,
     why: "Passiv form skjuler hvem som handler. Vær tydelig på hvem som gjør hva.",
     fix: "Skriv aktivt: «Forbundet gjennomfører …», «Vi vurderer …».",
     ord: ["gjennomføres","vurderes","besluttes","anbefales","igangsettes","iverksettes",
@@ -53,8 +72,10 @@ const REGLER = {
 
   // PÅSTÅELIG / ARROGANT (amber). «Tydelig, men ikke påståelig», «Kunnskapsrik, men ikke arrogant».
   paastaelig: {
+    type: "liste",
     label: "Kan virke påståelig eller arrogant",
-    sclass: "paastaelig",
+    color: "#e0a93a",
+    prio: 2,
     why: "Merkevaren er tydelig, men ikke påståelig, og kunnskapsrik uten å være arrogant.",
     fix: "Underbygg med fakta i stedet for å slå fast.",
     ord: ["åpenbart","selvfølgelig","naturligvis","uten tvil","alle vet","enhver forstår",
@@ -63,10 +84,12 @@ const REGLER = {
 
   // FAGSJARGONG / FORKORTELSER (blå). Flagges alltid – bør forklares for lesere utenfor faget.
   fag: {
+    type: "ordbok",
     label: "Fagsjargong – bør forklares",
-    sclass: "fag",
+    color: "#1f6fb2",
+    prio: 2,
     why: "Fagsjargong eller forkortelse som kan være ukjent utenfor profesjonen.",
-    fix: "Forklar første gang, eller bruk et hverdagsord.",
+    fixPrefix: "Bør forklares. Betyr: ",
     ord: {
       "MNFF":"spesialist godkjent av Norsk Fysioterapeutforbund",
       "ASA 4313":"avtalen mellom KS og staten om driftstilskudd til fysioterapeuter",
@@ -94,9 +117,12 @@ const REGLER = {
 
   // FAGORD – kontekstavhengig (soft). Kan trenge forklaring ut fra hvem som leser.
   fagsoft: {
+    type: "ordbok",
     label: "Fagord – vurder forklaring",
-    sclass: "fagsoft",
+    color: "#5b7fa6",
+    prio: 1,
     why: "Litt fagspråk. Ut fra konteksten kan det trenge en forklaring.",
+    fixPrefix: "Vurder forklaring ut fra konteksten. Betyr: ",
     ord: {
       "takst":"fastsatt sats for hva en behandling gir i refusjon",
       "refusjon":"det folketrygden dekker av behandlingen",
@@ -108,9 +134,12 @@ const REGLER = {
 
   // PERSONFØRST-SPRÅK (cyan). Sett mennesket først, ikke diagnosen.
   personforst: {
+    type: "ordbok",
     label: "Skriv personen først",
-    sclass: "personforst",
+    color: "#0e7490",
+    prio: 2,
     why: "Sett mennesket først. En person er mer enn diagnosen.",
+    fixPrefix: "Skriv heller: ",
     ord: {
       "dement":"person med demens",
       "funksjonshemmet":"person med funksjonsnedsettelse",
