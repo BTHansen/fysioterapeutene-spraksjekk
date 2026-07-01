@@ -14,8 +14,8 @@ i en nettleser.
 index.html            markup, design (CSS) og innlasting av filene under
 spraksjekk.js         logikken (analyse, visning, lesbarhet)
 data/
-  nff-regler.js       NFFs egne regler: harde regler, tunge ord, passiv,
-                      påståelig, fagsjargong, fagord (soft). REDIGER HER.
+  nff-regler.js       Norsk Fysioterapeutforbunds egne regler: harde regler, tunge ord, passiv,
+                      påståelig, fagsjargong, fagord (soft).
   kansellisten.js     Språkrådets kanselliste
   nrk.js              NRKs flerkulturelle ordliste + ordliste for funksjonsmangfold
   avloserord.js       Språkrådets avløserord (importord -> norsk)
