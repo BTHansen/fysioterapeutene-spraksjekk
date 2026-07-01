@@ -3,12 +3,12 @@
 Et skriveverktøy som gir umiddelbar tilbakemelding på tekst, bygget på forbundets
 merkevareplattform. Alt kjører i nettleseren. Ingen tekst sendes noe sted.
 
-Inspirert av NAVs Klarspråkshjelpen (github.com/navikt/spraksjekk), tilpasset NFF.
+Inspirert av NAVs Klarspråkshjelpen (github.com/navikt/spraksjekk), tilpasset Norsk Fysioterapeutforbund.
 
 ## Slik er prosjektet bygd
 
-Byggefritt statisk nettsted. Ingen npm, ingen kompilering. Åpne `index.html`
-i en nettleser, eller publiser mappa som den er.
+Laget av Claude som byggefritt statisk nettsted. Ingen npm, ingen kompilering. Åpne `index.html`
+i en nettleser.
 
 ```
 index.html            markup, design (CSS) og innlasting av filene under
@@ -35,14 +35,6 @@ data/
 
 Formatet er enkelt: hver oppføring er `["ord", "forklaring eller forslag"]`
 (NRK har i tillegg et brukstall og en kilde).
-
-## Publisere på GitHub Pages
-
-1. Lag et nytt repo på GitHub (f.eks. `nff-spraksjekk`).
-2. Last opp alle filene i denne mappa (behold mappestrukturen, ta med `.nojekyll`).
-3. Repo -> Settings -> Pages -> Build and deployment -> Source: «Deploy from a branch»,
-   Branch: `main`, mappe `/ (root)`. Lagre.
-4. Siden blir tilgjengelig på `https://<brukernavn>.github.io/nff-spraksjekk/`.
 
 ## Kilder
 
