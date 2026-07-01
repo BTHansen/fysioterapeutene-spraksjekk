@@ -1,0 +1,84 @@
+MIT License
+
+Copyright (c) 2026 Norsk Fysioterapeutforbund
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+===============================================================================
+Tredjepartsmateriale og kilder
+===============================================================================
+
+Dette verktøyet gjenbruker ordlister og bygger på arbeid fra andre.
+Rettighetene til det opprinnelige materialet tilhører de respektive eierne.
+
+-------------------------------------------------------------------------------
+1. NAV – Klarspråkshjelpen (https://github.com/navikt/spraksjekk)
+-------------------------------------------------------------------------------
+Ordlistene i data/ (Kansellisten, NRKs ordlister og Språkrådets avløserord)
+er hentet fra NAVs prosjekt, som er lisensiert under MIT. NAVs opphavsretts-
+notis og lisenstekst gjengis her slik MIT-lisensen krever:
+
+    The MIT License
+
+    Copyright 2023 NAV (Arbeids- og velferdsdirektoratet) - The Norwegian
+    Labour and Welfare Administration
+
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+-------------------------------------------------------------------------------
+2. NRK – språklister
+-------------------------------------------------------------------------------
+Filen data/nrk.js bygger på NRKs flerkulturelle ordliste og NRKs ordliste for
+funksjonsmangfold. Rettighetene til dette innholdet tilhører NRK.
+Kilder:
+    https://info.nrk.no/sprak/funksjonsmangfold/
+    NRKs flerkulturelle ordliste (NRK Språk)
+
+-------------------------------------------------------------------------------
+3. Språkrådet – Kansellisten og avløserord
+-------------------------------------------------------------------------------
+Filene data/kansellisten.js og data/avloserord.js bygger på materiale fra
+Språkrådet. Rettighetene til dette innholdet tilhører Språkrådet.
+Kilder:
+    https://www.sprakradet.no/klarsprak/om-skriving/kansellisten/
+    https://www.sprakradet.no/sprakhjelp/Skriverad/Avloeysarord/
+
+-------------------------------------------------------------------------------
+Merknad
+-------------------------------------------------------------------------------
+MIT-lisensen øverst gjelder koden og NFF-tilpasningen i dette prosjektet.
+Ordlistenes innhold eies av kildene nevnt over. Ved offentlig publisering bør
+NFF forsikre seg om at bruken er i tråd med vilkårene til NRK og Språkrådet.
