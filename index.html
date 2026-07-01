@@ -52,21 +52,8 @@
     outline:none;border-radius:0 0 12px 12px;caret-color:var(--navy);
   }
   #input:focus{outline:2px solid var(--navy);outline-offset:-2px;}
+  /* Markeringsfargene settes nå automatisk fra hver kategoris "color" i nff-regler.js */
   mark{border-radius:3px;padding:1px 0;color:transparent;background:transparent;}
-  mark.hard{background:rgba(200,16,46,.22);box-shadow:0 1px 0 var(--red) inset, 0 -2px 0 var(--red) inset;}
-  mark.byra{background:rgba(201,122,0,.22);box-shadow:0 -2px 0 var(--amber) inset;}
-  mark.passiv{background:rgba(106,76,160,.20);box-shadow:0 -2px 0 var(--purple) inset;}
-  mark.paastaelig{background:rgba(201,122,0,.15);box-shadow:0 -2px 0 var(--amber) inset;}
-  mark.fag{background:rgba(31,111,178,.18);box-shadow:0 -2px 0 var(--blue) inset;}
-  mark.gjentakelse{background:rgba(120,120,120,.20);box-shadow:0 -2px 0 #777 inset;}
-  mark.komma{background:rgba(30,122,70,.18);box-shadow:0 -2px 0 var(--green) inset;}
-  mark.nrk1{background:rgba(168,18,52,.28);box-shadow:0 1px 0 #a81234 inset, 0 -2px 0 #a81234 inset;}
-  mark.nrk2{background:rgba(190,90,30,.20);box-shadow:0 -2px 0 #b35a1e inset;}
-  mark.kanselli{background:rgba(169,118,10,.20);box-shadow:0 -2px 0 #a9760a inset;}
-  mark.person{background:rgba(160,26,125,.20);box-shadow:0 -2px 0 #a01a7d inset;}
-  mark.import{background:rgba(42,140,130,.18);box-shadow:0 -2px 0 #2a8c82 inset;}
-  mark.fagsoft{background:rgba(91,127,166,.16);box-shadow:0 -2px 0 #5b7fa6 inset;}
-  mark.personforst{background:rgba(14,116,144,.16);box-shadow:0 -2px 0 #0e7490 inset;}
 
   .toolbar{display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding:12px 18px;border-bottom:1px solid var(--line);background:#fafbfd;border-radius:12px 12px 0 0;}
   .toolbar label{font-size:13px;color:var(--gray-text);display:flex;align-items:center;gap:7px;cursor:pointer;}
@@ -87,19 +74,11 @@
   .fgroup{margin-top:14px;}
   .fgroup h3{font-size:13px;margin:0 0 8px;display:flex;align-items:center;gap:8px;}
   .swatch{width:12px;height:12px;border-radius:3px;display:inline-block;}
-  .s-hard{background:var(--red);} .s-byra{background:var(--amber);} .s-passiv{background:var(--purple);}
-  .s-paastaelig{background:#e0a93a;} .s-fag{background:var(--blue);} .s-gjentakelse{background:#777;} .s-komma{background:var(--green);} .s-lang{background:var(--navy);}
-  .s-nrk1{background:#a81234;} .s-nrk2{background:#b35a1e;}
-  .s-kanselli{background:#a9760a;} .s-person{background:#a01a7d;} .s-langord{background:var(--navy);} .s-avsnitt{background:var(--navy);} .s-import{background:#2a8c82;} .s-fagsoft{background:#5b7fa6;} .s-personforst{background:#0e7490;}
-  .finding{border:1px solid var(--line);border-left-width:4px;border-radius:7px;padding:9px 11px;margin-bottom:7px;font-size:13.5px;background:#fff;}
+  .finding{border:1px solid var(--line);border-left:4px solid var(--navy);border-radius:7px;padding:9px 11px;margin-bottom:7px;font-size:13.5px;background:#fff;}
   .finding .w{font-weight:700;}
   .finding .why{color:var(--gray-text);margin-top:2px;}
   .finding .fix{margin-top:3px;}
   .finding .fix b{color:var(--green);}
-  .lb-hard{border-left-color:var(--red);} .lb-byra{border-left-color:var(--amber);} .lb-passiv{border-left-color:var(--purple);}
-  .lb-paastaelig{border-left-color:#e0a93a;} .lb-fag{border-left-color:var(--blue);} .lb-gjentakelse{border-left-color:#777;} .lb-komma{border-left-color:var(--green);} .lb-lang{border-left-color:var(--navy);}
-  .lb-nrk1{border-left-color:#a81234;} .lb-nrk2{border-left-color:#b35a1e;}
-  .lb-kanselli{border-left-color:#a9760a;} .lb-person{border-left-color:#a01a7d;} .lb-langord{border-left-color:var(--navy);} .lb-avsnitt{border-left-color:var(--navy);} .lb-import{border-left-color:#2a8c82;} .lb-fagsoft{border-left-color:#5b7fa6;} .lb-personforst{border-left-color:#0e7490;}
   .finding .kilde{color:#5e6a7e;font-size:11.5px;margin-top:4px;}
   .finding .kilde a{color:#5e6a7e;}
   .empty{color:var(--gray-text);font-size:14px;padding:10px 0;}
