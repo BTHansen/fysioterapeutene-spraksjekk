@@ -73,6 +73,15 @@ function analyser(){
     }
   }
 
+  // 5c) Personførst-språk – sett mennesket først
+  if(REGLER.personforst) for(const [ord,forslag] of Object.entries(REGLER.personforst.ord)){
+    const re=reFor(ord);let m;
+    while((m=re.exec(text))!==null){
+      ranges.push({s:m.index,e:m.index+m[0].length,cat:"personforst",label:REGLER.personforst.label,
+        word:m[0],why:REGLER.personforst.why,fix:"Skriv heller: <b>"+forslag+"</b>",prio:2});
+    }
+  }
+
   // 6) Gjentatte ord ("og og")
   const reRep=/(?<![\wæøåÆØÅ])([a-zæøåA-ZÆØÅ]{2,})\s+\1(?![\wæøåÆØÅ])/gi;
   let mr;
@@ -181,9 +190,10 @@ function analyser(){
 
 function visFunn(valgt,extra){
   const {langeSetn,langeOrd,langeAvsnitt}=extra;
-  const order=["hard","person","nrk1","nrk2","kanselli","byra","passiv","paastaelig","import","fag","fagsoft","gjentakelse","komma"];
+  const order=["hard","person","nrk1","nrk2","personforst","kanselli","byra","passiv","paastaelig","import","fag","fagsoft","gjentakelse","komma"];
   const titler={hard:"Aldri",person:"Mulige personopplysninger",
     nrk1:"Diskriminerende eller utdatert – skal ikke brukes",nrk2:"Omtale med omtanke",
+    personforst:"Skriv personen først",
     kanselli:"Kansellisten – utdatert ord",byra:"Tunge ord",passiv:"Passiv",
     paastaelig:"Påståelig / arrogant",import:"Importord – norsk finnes",
     fag:"Fagsjargong – bør forklares",fagsoft:"Fagord – vurder forklaring",
@@ -272,6 +282,7 @@ document.getElementById("btn-eksempel").addEventListener("click",()=>{
   "I henhold til vedtaket vil tiltaket iverksettes fra høsten, og dette skal naturligvis gjennomføres i samråd med tillitsvalgte. "+
   "Fysioterapeuter kan avlaste fastleger og dermed bidra til at flere pasienter blir behandlet raskere, noe som åpenbart er bra for folkehelsen og for kommunene som sliter med å rekruttere og som derfor trenger flere hender i tjenesten. "+
   "Vi vil også nå fysioterapeuter med utenlandsk bakgrunn og legge til rette for brukere med spesielle behov. "+
+  "En dement pasient og en funksjonshemmet kollega bør omtales med omtanke. "+
   "Vi gir feedback innen deadline. "+
   "Medlemmer som har spørsmål vedrørende MNFF eller takst A7 kan kontakte forbundet på post@fysio.no eller 22 93 30 50.";
   analyser();input.focus();
