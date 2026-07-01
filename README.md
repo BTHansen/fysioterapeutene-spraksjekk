@@ -26,10 +26,22 @@ data/
 
 Åpne fila i `data/` og rediger. Ingen byggesteg – lagre og last siden på nytt.
 
-- Legge til et fagord som bør forklares: åpne `data/nff-regler.js`, finn `fag`,
-  legg til en linje: `"nytt ord":"kort forklaring",`
-- Kontekstavhengig fagord (soft, lyseblå): legg det i `fagsoft` i samme fil.
-- De harde reglene (aldri «NFF», aldri «avlaste …») ligger øverst i `nff-regler.js`.
+- Legge til et fagord som bør forklares: åpne `data/nff-regler.js`, finn kategori og legg til en linje: `"nytt ord":"kort forklaring".
+- For å legge til en ny kategori kan du lime inn følgende:
+
+minkategori: {
+    type: "ordbok",
+    label: "Overskriften som vises",
+    color: "#8e44ad",
+    prio: 2,
+    why: "Kort forklaring.",
+    fixPrefix: "Skriv heller: ",
+    ord: {
+      "ord1":"forslag1",
+      "ord2":"forslag2"
+    }
+  },
+
 - Ordene i `kansellisten.js`, `nrk.js` og `avloserord.js` er hentet fra Språkrådet
   og NRK. Rediger bare hvis dere bevisst vil avvike fra kildene.
 
