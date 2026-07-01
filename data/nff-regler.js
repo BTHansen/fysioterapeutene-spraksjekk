@@ -110,7 +110,7 @@ const REGLER = {
   personforst: {
     label: "Skriv personen først",
     sclass: "personforst",
-    why: "Sett mennesket først. Gjør diagnosen til en egenskap, ikke en merkelapp.",
+    why: "Sett mennesket først. En person er mer enn diagnosen.",
     ord: {
       "dement":"person med demens",
       "funksjonshemmet":"person med funksjonsnedsettelse",
