@@ -14,16 +14,16 @@ const REGLER = {
         fix: "Skriv «Norsk Fysioterapeutforbund» (eller «forbundet» ved gjentakelse)." },
       // Aldri "avlaste" leger/andre yrkesgrupper
       { re: /(?<![\wæøåÆØÅ])avlast(?:e|er|et|a|es)?\s+(?:fastleg\w*|legen\w*|legene|leger|lege\b|andre\s+yrkesgrupp\w*|andre\s+helsepersonell|helsepersonell|sykehus\w*|kommunen\w*)/gi,
-        why: "Fysioterapeuter er selvstendige behandlere og helsepersonell med høyere utdanning. Vi avlaster ikke andre yrkesgrupper.",
-        fix: "Skriv hva fysioterapeuten faktisk gjør: «behandler», «utreder», «følger opp», «tar selvstendig ansvar for»." }
+        why: "Fysioterapeuter er selvstendige behandlere og helsepersonell med høyere utdanning. Vi bør være forsiktige med å si vi avlaster andre yrkesgrupper.",
+        fix: "Skriv hva fysioterapeutens bidrag betyr: «gir mindre press på», «frigjør tid», «fjerner unødvendig dobbeltarbeid», «løser problemet med en gang»." }
     ]
   },
 
   // MODERNE TUNGE ORD (gul). Ord som ikke står i Kansellisten, men gjør teksten unødig tung.
   byra: {
-    label: "Tungt ord – velg et enklere",
+    label: "Tungt ord – vurder velge et enklere",
     sclass: "byra",
-    why: "Gjør teksten unødig byråkratisk. Merkevaren er mindre byråkratisk og mer menneskelig.",
+    why: "Kan gjøre teksten unødig byråkratisk. Merkevaren er mindre byråkratisk og mer menneskelig.",
     ord: {
       "i henhold til":"etter / ifølge", "i forbindelse med":"ved / for",
       "med henblikk på":"for å", "herved":"(kan ofte sløyfes)",
@@ -36,7 +36,7 @@ const REGLER = {
       "øvrige":"andre / resten", "inneha":"ha", "påse":"sørge for / passe på",
       "grunnet":"på grunn av", "hensyntatt":"tatt hensyn til", "tilkjennegi":"vise / si",
       "vil kunne":"kan", "i og med at":"fordi", "samt":"og", "dersom":"hvis",
-      "avholde":"holde", "vedta å":"bestemme å", "fordres":"kreves / trengs"
+      "fordres":"kreves / trengs"
     }
   },
 
