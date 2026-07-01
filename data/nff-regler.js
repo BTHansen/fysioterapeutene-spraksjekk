@@ -104,5 +104,20 @@ const REGLER = {
       "driftstilskudd":"offentlig tilskudd til avtalefysioterapeuter",
       "avtalehjemmel":"rett til å drive med kommunalt driftstilskudd"
     }
+  },
+
+  // PERSONFØRST-SPRÅK (cyan). Sett mennesket først, ikke diagnosen.
+  personforst: {
+    label: "Skriv personen først",
+    sclass: "personforst",
+    why: "Sett mennesket først. Gjør diagnosen til en egenskap, ikke en merkelapp.",
+    ord: {
+      "dement":"person med demens",
+      "funksjonshemmet":"person med funksjonsnedsettelse",
+      "funksjonsnedsatt":"person med funksjonsnedsettelse",
+      "synshemmet":"person med synshemming",
+      "bevegelseshemmet":"person med bevegelseshemming",
+      "hørselshemmet":"person med hørselshemming"
+    }
   }
 };
